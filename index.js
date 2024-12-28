@@ -13,8 +13,8 @@ app.use(cors({ origin: '*' })); // Allow all origins or specify allowed origins
 
 // MongoDB Connection
 mongoose
-  .connect(process.env.MONGO_URI
-    // { useNewUrlParser: true, useUnifiedTopology: true }
+  .connect(process.env.MONGO_URI,
+    { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => console.log("DB Success"))
   .catch((err) => console.error("DB failed:", err));
@@ -38,7 +38,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // POST Route to handle contact form submissions
-app.post("/contact", async (req, res) => {
+app.post("/api/contact", async (req, res) => {
   const { name, email, message } = req.body;
 
   try {
