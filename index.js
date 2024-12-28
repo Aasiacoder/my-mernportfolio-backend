@@ -25,7 +25,8 @@ const contactSchema = new mongoose.Schema({
   email: String,
   message: String,
 });
-
+ 
+// Model
 const Contact = mongoose.model("Contact", contactSchema);
 
 // Nodemailer Transporter
@@ -67,6 +68,12 @@ app.post("/api/contact", async (req, res) => {
     res.status(500).json({ message: "Failed to save message" });
   }
 });
+
+// Fallback route for unmatched routes
+app.get("/", (req, res) => {
+  res.send("This is an API server. Use the correct endpoints.");
+});
+
 
 // Start Server
 app.listen(PORT, () =>
