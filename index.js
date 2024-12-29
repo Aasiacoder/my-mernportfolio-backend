@@ -41,6 +41,7 @@ const transporter = nodemailer.createTransport({
 // POST Route to handle contact form submissions
 app.post("/api/contact", async (req, res) => {
   const { name, email, message } = req.body;
+  res.send("This is api contact");
 
   try {
     // Save to MongoDB
