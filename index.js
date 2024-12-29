@@ -70,9 +70,9 @@ app.post("/api/contact", async (req, res) => {
 });
 
 // Fallback route for unmatched routes
-app.get("/", (req, res) => {
-  res.send("This is an API server. Use the correct endpoints.");
-});
+// app.get("/", (req, res) => {
+//   res.send("This is an API server. Use the correct endpoints.");
+// });
 
 
 // Start Server
