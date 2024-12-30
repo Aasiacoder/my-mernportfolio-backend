@@ -13,9 +13,7 @@ app.use(cors({ origin: '*' })); // Allow all origins or specify allowed origins
 
 // MongoDB Connection
 mongoose
-  .connect(process.env.MONGO_URI
-   , { useNewUrlParser: true, useUnifiedTopology: true }
-  )
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("DB Success"))
   .catch((err) => console.error("DB failed:", err));
 
@@ -25,7 +23,7 @@ const contactSchema = new mongoose.Schema({
   email: String,
   message: String,
 });
- 
+
 // Model
 const Contact = mongoose.model("Contact", contactSchema);
 
