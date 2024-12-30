@@ -14,7 +14,7 @@ app.use(cors({ origin: '*' })); // Allow all origins or specify allowed origins
 // MongoDB Connection
 mongoose
   .connect(process.env.MONGO_URI
-  //  , { useNewUrlParser: true, useUnifiedTopology: true }
+   , { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => console.log("DB Success"))
   .catch((err) => console.error("DB failed:", err));
